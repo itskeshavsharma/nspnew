@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <h1>Interactive Quiz System</h1>
+        <button class="theme-switcher" onclick="toggleTheme()">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+    
+    <!-- Background Image Section -->
+    <div class="background-img"></div>
+
+    <main>
+        <!-- Welcome Section -->
+        <section id="welcome" class="tab active">
+            <div class="content">
+                <img src="images/quiz.jpg" alt="Quiz Image" class="header-image">
+                <h2>Welcome to the Quiz</h2>
+                <p>Test your knowledge on Data Structures & Algorithms or Object-Oriented Programming!</p>
+                <button class="btn primary" onclick="goToLogin()">Get Started</button>
+            </div>
+        </section>
+
+        <!-- Login Section -->
+        <section id="login" class="tab">
+            <div class="content">
+                <img src="images/login.jpeg" alt="Login Image" class="header-image">
+                <h2>Login</h2>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <input type="password" id="password" placeholder="Enter your password" required>
+                <button class="btn primary" onclick="login()">Login</button>
+                <div id="login-error" class="error hidden">Please enter both email and password.</div>
+            </div>
+        </section>
+
+        <!-- Subject Selection Section -->
+        <section id="subject-selection" class="tab">
+            <div class="content">
+                
+                <h2>Select a Subject</h2>
+                <select id="subject">
+                    <option value="" disabled selected>Select Subject</option>
+                    <option value="dsa">DSA (Data Structures and Algorithms)</option>
+                    <option value="oops">OOPs (Object-Oriented Programming)</option>
+                </select>
+                <button class="btn primary" onclick="startQuiz()">Start Quiz</button>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="tab">
+            <div class="content">
+                <h2>Quiz</h2>
+                <div id="question-container"></div>
+                <div class="navigation">
+                    <button class="btn" onclick="prevQuestion()" id="prev-btn" class="hidden">Previous</button>
+                    <button class="btn primary" onclick="nextQuestion()" id="next-btn">Next</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section id="result" class="tab">
+            <div class="content">
+                <h2>Quiz Results</h2>
+                <div id="score"></div>
+                <button class="btn primary" onclick="restartQuiz()">Restart Quiz</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Interactive Quiz System</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
